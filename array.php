@@ -18,7 +18,7 @@
         />
     </head>
 
-    <body>
+    
        <?php
        $collection = [
         ['ali','dism','ali@gmail.com',57876],
@@ -30,18 +30,46 @@
         ['aliyar','dism','ali@gmail.com',57876],
 
        ];
-    //    echo $collection[1];
-    // print_r($collection);
-    // echo '<br>';
-    // var_dump($collection);
-    for($i=0;$i<count($collection);$i++){
-         echo "<br>";
-        for($j=0;$j<count($collection[$i]);$j++){
-            echo $collection[$i][$j]."&nbsp;&nbsp;&nbsp;&nbsp;";
-        }
-        
-    }
        ?>
+       <table class="table">
+<?php 
+ for($i=0;$i<count($collection);$i++){
+    if($i%2==0){
+        ?>
+        
+        <tr class="table">
+
+<?php
+        for($j=0;$j<count($collection[$i]);$j++){
+            ?>
+        <td><?php echo $collection[$i][$j]?></td>
+      
+        <?php
+         }
+        ?>
+    </tr>
+        <?php
+    }else{
+        ?>
+         <tr>
+
+<?php
+        for($j=0;$j<count($collection[$i]);$j++){
+            ?>
+        <td><?php echo $collection[$i][$j]?></td>
+      
+        <?php
+         }
+        ?>
+    </tr>
+        <?php
+    }
+  
+}
+?>
+        
+       </table>
+      
     </body>
 </html>
 
